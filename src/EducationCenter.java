@@ -43,7 +43,7 @@ public class EducationCenter implements Commands {
                     printStudentByLessoName();
                     break;
                 default:
-                    System.out.println("Invalid input:");
+                    System.err.println("Invalid input:");
             }
         }
     }
@@ -139,6 +139,6 @@ public class EducationCenter implements Commands {
         System.out.println("Please input " + CHANGE_STUDENT_LESSON + " to change student and lessons");
         System.out.println("Please input " + PRINT_STUDENTS_BY_LESSON_NAME + " to print students by lesson name");
         System.out.println("Please input " + PRINT_NUMBER_OF_STUDENTS + " to print number of students");
-        System.out.println("Please input " + DELETE_OF_STUDENT + " delete student");
+        System.out.println("Please input " + DELETE_OF_STUDENT + " to delete student");
     }
 }
