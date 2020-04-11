@@ -42,6 +42,12 @@ public class EducationCenter implements Commands {
                 case PRINT_STUDENTS_BY_LESSON_NAME:
                     printStudentByLessoName();
                     break;
+                case PRINT_NUMBER_OF_STUDENTS:
+                    printNumberOfStudent();
+                    break;
+                case DELETE_OF_STUDENT:
+                    deleteStudentByEmail();
+                    break;
                 default:
                     System.err.println("Invalid input:");
             }
