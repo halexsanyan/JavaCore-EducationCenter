@@ -7,15 +7,7 @@ import storage.StudentStorage;
 
 import java.util.Scanner;
 
-public class EducationCenter {
-
-    private static final int EXIT = 0;
-    private static final int ADD_STUDENT = 1;
-    private static final int ADD_LESSON = 2;
-    private static final int PRINT_STUDENTS = 3;
-    private static final int PRINT_LESSONS = 4;
-    private static final int CHANGE_STUDENT_LESSON = 5;
-    private static final int PRINT_STUDENTS_BY_LESSON_NAME = 6;
+public class EducationCenter implements Commands {
 
     public static StudentStorage studentStorage = new StudentStorage();
     public static LessonStorage lessonStorage = new LessonStorage();
@@ -54,6 +46,19 @@ public class EducationCenter {
                     System.out.println("Invalid input:");
             }
         }
+    }
+    private static void deleteStudentByEmail() {
+        studentStorage.print();
+        System.out.println("Input student detaylis(name, surname, email):");
+        String studentDataStr = scanner.nextLine();
+        String[] studentData = studentDataStr.split(",");
+        studentStorage.deleteStudent(studentData);
+        System.out.println("Student deleted from the list:");
+    }
+
+    private static void printNumberOfStudent() {
+        int num = studentStorage.getSize();
+        System.out.println(num + " student:");
     }
 
     private static void printStudentByLessoName() {
@@ -133,5 +138,7 @@ public class EducationCenter {
         System.out.println("Please input " + PRINT_LESSONS + " to print lessons");
         System.out.println("Please input " + CHANGE_STUDENT_LESSON + " to change student and lessons");
         System.out.println("Please input " + PRINT_STUDENTS_BY_LESSON_NAME + " to print students by lesson name");
+        System.out.println("Please input " + PRINT_NUMBER_OF_STUDENTS + " to print number of students");
+        System.out.println("Please input " + DELETE_OF_STUDENT + " delete student");
     }
 }

@@ -44,14 +44,6 @@ public class StudentStorage {
         return null;
     }
 
-    public void getStudent(Student student1) {
-        for (int i = 0; i < size; i++) {
-            if (students[i].getName().equals(student1.getName())) {
-                students[i] = student1;
-            }
-        }
-    }
-
     public void getStudentByLesson(Lesson name) {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < students[i].getLessons().length; j++) {
@@ -61,5 +53,18 @@ public class StudentStorage {
             }
         }
     }
+    public int getSize() {
+        return size;
+    }
+
+    public void deleteStudent(String[] student) {
+        for (int i = 0; i < size; i++) {
+            if (students[i].getName().equals(student[0]) & students[i].getEmail().equals(student[1]) & students[i].getEmail().equals(student[2])) {
+                students[i - 1] = students[i];
+            }
+        }
+        size--;
+    }
+
 }
 
